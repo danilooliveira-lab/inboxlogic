@@ -240,4 +240,4 @@ Retorno:
 
 **Danilo Oliveira**
 
-Desenvolvedor • IA • Automação
+Desenvolvedor • Python
