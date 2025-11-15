@@ -8,8 +8,6 @@
 
 ## 📸 Demonstrações da Aplicação
 
-> Substitua os caminhos abaixo pelas suas imagens reais.
-
 ### 🌙 Tema Escuro
 
 ![Tela Dark](app/static/img/readmeimg/tela-dark-1.png)
