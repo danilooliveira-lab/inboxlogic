@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="pt-BR" class="antialiased">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>InboxLogic — Processador Inteligente de E-mails</title>
+    <link rel="icon" type="image/png" href="/static/img/favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Variáveis de tema e cores usadas no app */
+        :root {
+            --bg: #cec5bd;
+            --panel: rgba(255, 255, 255, 0.06);
+            --panel-solid: rgba(255, 255, 255, 0.92);
+            --muted: #000;
+            --accent: #f97316;
+            --accent-600: #ea580c;
+            --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+            --text: #0f172a;
+            --glass: rgba(43, 40, 40, 0.918);
+            --input-bg: #fff;
+            --input-text: #0f172a;
+            --success: #059669;
+            --danger: #ef4444;
+            --neutral: #374151
+        }
+
+        /* Cores e sombras para o tema escuro */
+        html[data-theme="dark"] {
+            --bg: #071020;
+            --panel: rgba(255, 255, 255, 0.03);
+            --panel-solid: rgba(255, 255, 255, 0.96);
+            --muted: #9aa6b2;
+            --accent: #fb923c;
+            --accent-600: #fb7a1a;
+            --card-shadow: 0 12px 36px rgba(2, 6, 23, 0.6);
+            --text: #e6eef8;
+            --glass: rgba(12, 14, 23, 0.6);
+            --input-bg: #fff;
+            --input-text: #0f172a;
+            --success: #10b981;
+            --danger: #f87171;
+            --neutral: #374151
+        }
+
+        /* Estilos base do body */
+        body {
+            background: radial-gradient(900px 400px at 10% 10%, rgba(249, 115, 22, 0.03), transparent), var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial
+        }
+
+        /* Componentes visuais reaproveitáveis */
+        .glass {
+            background: linear-gradient(180deg, var(--panel), rgba(0, 0, 0, 0));
+            backdrop-filter: blur(6px);
+            border-radius: 12px;
+            box-shadow: var(--card-shadow)
+        }
+
+        .card-surface {
+            background: linear-gradient(180deg, var(--panel), rgba(0, 0, 0, 0));
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: var(--card-shadow)
+        }
+
+        .card-surface-plain {
+            background: transparent;
+            padding: 10px;
+            border-radius: 8px
+        }
+
+        .btn-accent {
+            background: linear-gradient(90deg, var(--accent), var(--accent-600));
+            color: #fff;
+            border-radius: 10px
+        }
+
+        .btn-clear {
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            padding: 8px 12px;
+            color: var(--accent);
+            background: transparent
+        }
+
+        /* Botões de aba (visual) */
+        .tab-btn {
+            transition: all .28s cubic-bezier(.2, .9, .2, 1);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: left;
+            display: block;
+            width: 100%
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(90deg, rgba(250, 200, 150, 0.12), rgba(250, 200, 150, 0.04));
+            border-left: 4px solid var(--accent-600);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06)
+        }
+
+        /* Botão de upload estilizado */
+        .file-btn {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            cursor: pointer;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.02);
+            color: var(--text)
+        }
+
+        .file-btn:hover {
+            transform: translateY(-3px);
+            transition: all .12s ease;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06)
+        }
+
+        .file-btn.small {
+            padding: 8px 10px;
+            font-size: .92rem
+        }
+
+        /* Labels e inputs */
+        label.field-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: .95rem;
+            color: var(--text)
+        }
+
+        textarea.input-area {
+            background: var(--input-bg);
+            color: var(--input-text);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            border-radius: 8px;
+            padding: 12px;
+            min-height: 140px;
+            resize: vertical
+        }
+
+        textarea.input-area::placeholder {
+            color: rgba(15, 23, 42, 0.45)
+        }
+
+        /* Cartão de resposta: barra lateral onde resposta aparece */
+        #responseCard {
+            background: var(--panel-solid);
+            color: var(--input-text);
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 12px 30px rgba(2, 6, 23, 0.04);
+            min-height: 110px;
+            max-height: 60vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch
+        }
+
+        #responseCard.expanded {
+            max-height: none !important;
+            overflow-y: visible !important
+        }
+
+        /* Wrapper visual do cartão de resposta */
+        #respostaCardWrapper {
+            border-left: 3px solid rgba(255, 122, 0, 0.65);
+            box-shadow:
+                0 0 6px rgba(255, 122, 0, 0.25),
+                0 0 14px rgba(255, 122, 0, 0.15);
+            border-radius: 12px;
+            padding-left: 14px;
+        }
+
+
+        .action-card {
+            padding: 14px;
+            border-radius: 12px;
+            background: var(--panel);
+            box-shadow: 0 8px 20px rgba(2, 6, 23, 0.03);
+            border-left: 4px solid rgba(250, 115, 22, 0.08);
+            color: var(--text)
+        }
+
+        .chip {
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 13px;
+            background: linear-gradient(90deg, rgba(251, 146, 60, 0.08), rgba(251, 146, 60, 0.04));
+            color: var(--accent-600);
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.02);
+            border: 1px solid rgba(251, 146, 60, 0.06)
+        }
+
+        .badge-prod {
+            background: linear-gradient(90deg, rgba(16, 185, 129, 0.12), rgba(16, 185, 129, 0.04));
+            color: var(--success);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 600
+        }
+
+        .badge-improd {
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.12), rgba(239, 68, 68, 0.04));
+            color: var(--danger);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 600
+        }
+
+        .badge-neutro {
+            background: linear-gradient(90deg, rgba(55, 65, 81, 0.06), rgba(55, 65, 81, 0.02));
+            color: var(--neutral);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 600
+        }
+
+        .tab-panel {
+            transition: opacity .28s cubic-bezier(.2, .9, .2, 1), transform .28s cubic-bezier(.2, .9, .2, 1)
+        }
+
+        .tab-panel.hidden {
+            opacity: 0;
+            transform: translateY(8px);
+            pointer-events: none;
+            height: 0;
+            overflow: hidden
+        }
+
+        /* Overlay de loading usado enquanto aguarda API */
+        #loadingOverlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(2, 6, 23, 0.35);
+            z-index: 80;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .18s ease
+        }
+
+        #loadingOverlay.show {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .loader {
+            width: 84px;
+            height: 84px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.4)
+        }
+
+        .loader svg {
+            animation: spin 1s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        /* TOAST */
+        #toast {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            z-index: 110;
+            padding: 14px 18px;
+            border-radius: 14px;
+            min-width: 240px;
+            max-width: 420px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+            transform: translateY(8px);
+            opacity: 0;
+            transition: all .22s cubic-bezier(.2, .9, .2, 1);
+            color: #fff;
+            backdrop-filter: blur(6px);
+            pointer-events: none;
+            font-weight: 500
+        }
+
+        #toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto
+        }
+
+        #toast.success {
+            background: linear-gradient(90deg, #059669, #10b981)
+        }
+
+        #toast.error {
+            background: linear-gradient(90deg, #ef4444, #f97316)
+        }
+
+        #toast.info {
+            background: linear-gradient(90deg, #1f2937, #374151)
+        }
+
+        #toast .icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, .14);
+            font-size: 18px
+        }
+
+        #toast .body {
+            display: flex;
+            flex-direction: column
+        }
+
+        .pretty {
+            white-space: pre-wrap
+        }
+
+        @media (max-width:900px) {
+            .tab-list {
+                display: flex;
+                gap: 8px
+            }
+
+            .tab-list .tab-btn {
+                flex: 1;
+                text-align: center;
+                padding: 10px
+            }
+        }
+
+        .textarea-full {
+            width: 100% !important;
+            min-width: 100% !important;
+            box-sizing: border-box !important
+        }
+
+        textarea {
+            color: #0f172a !important;
+            background: #ffffff !important
+        }
+
+        :root {
+            --textarea-radius: 10px;
+            --textarea-padding: 14px;
+            --textarea-font-size: 14px;
+            --accent-strong: rgba(255, 122, 0, 0.9);
+            --accent-soft: rgba(255, 122, 0, 0.10);
+        }
+
+        /* LIGHT THEME (padrão) */
+        :root:not([data-theme="dark"]) #textClassify,
+        :root:not([data-theme="dark"]) #textAnalyze {
+            background: #fbf7f3;
+            /* off-white confortável */
+            color: #0f172a;
+            /* texto escuro */
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        /* DARK THEME */
+        :root[data-theme="dark"] #textClassify,
+        :root[data-theme="dark"] #textAnalyze {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55), inset 0 2px 8px rgba(255, 255, 255, 0.02);
+        }
+
+        /* Apply shared textarea styling */
+        #textClassify,
+        #textAnalyze {
+            width: 100%;
+            min-height: 140px;
+            padding: var(--textarea-padding);
+            border-radius: var(--textarea-radius);
+            transition: box-shadow .18s ease, border-color .18s ease, transform .18s ease;
+            font-size: var(--textarea-font-size);
+            line-height: 1.6;
+            outline: none;
+            resize: vertical;
+            caret-color: var(--accent-strong);
+            box-sizing: border-box;
+        }
+
+        /* placeholder color tuned for both themes */
+        #textClassify::placeholder,
+        #textAnalyze::placeholder {
+            color: rgba(15, 23, 42, 0.45);
+        }
+
+        :root[data-theme="dark"] #textClassify::placeholder,
+        :root[data-theme="dark"] #textAnalyze::placeholder {
+            color: rgba(230, 238, 248, 0.45);
+        }
+
+        /* Focus state: leve halo com accent para indicar foco */
+        #textClassify:focus,
+        #textAnalyze:focus {
+            border-color: var(--accent-strong);
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.45),
+                0 0 0 6px rgba(255, 122, 0, 0.06);
+            transform: translateY(-1px);
+        }
+
+        /* ---------- Response area styling (divs existentes) ---------- */
+
+        /* response card box background already #responseCard, refine it */
+        #responseCard {
+            background: var(--panel-solid);
+            color: var(--input-text);
+            border-radius: 10px;
+            padding: 12px;
+            box-shadow: 0 12px 30px rgba(2, 6, 23, 0.04);
+            min-height: 110px;
+            max-height: 60vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            transition: box-shadow .18s ease, border-color .18s ease;
+        }
+
+        /* responseText (conteúdo) — aparência tipo textarea */
+        #responseText {
+            display: block;
+            white-space: pre-wrap;
+            word-break: break-word;
+            padding: var(--textarea-padding);
+            border-radius: calc(var(--textarea-radius) - 2px);
+            background: transparent;
+            color: inherit;
+            line-height: 1.6;
+            font-size: var(--textarea-font-size);
+        }
+
+        /* quando quiser destacar visualmente a área de resposta (por ex. foco programático) */
+        #respostaCardWrapper.response-highlight,
+        #respostaCardWrapper.response-highlight #responseCard {
+            border-color: var(--accent-strong);
+            box-shadow:
+                0 14px 40px rgba(0, 0, 0, 0.55),
+                0 0 18px rgba(255, 122, 0, 0.08);
+        }
+
+        /* mobile adjustments */
+        @media (max-width:900px) {
+
+            #textClassify,
+            #textAnalyze {
+                min-height: 120px;
+                font-size: 13px;
+            }
+
+            #responseCard {
+                min-height: 90px;
+            }
+        }
+
+        /* Override específico — só muda o fundo dos dois textareas do app */
+        #textClassify,
+        #textAnalyze {
+            background-color: rgb(233, 227, 222) !important;
+            /* cor desejada */
+            background-image: none !important;
+            /* remove qualquer gradiente herdado */
+            color: var(--text) !important;
+            /* garante contraste correto */
+        }
+
+        /* Placeholder legível */
+        #textClassify::placeholder,
+        #textAnalyze::placeholder {
+            color: rgba(15, 23, 42, 0.45) !important;
+        }
+
+        /* Se quiser uma versão mais escura no tema dark */
+        :root[data-theme="dark"] #textClassify,
+        :root[data-theme="dark"] #textAnalyze {
+            background-color: rgba(255, 255, 255, 0.03) !important;
+            background-image: none !important;
+        }
+
+        :root[data-theme="dark"] #textClassify::placeholder,
+        :root[data-theme="dark"] #textAnalyze::placeholder {
+            color: rgba(230, 238, 248, 0.45) !important;
+        }
+
+        /* Estilo do fundo do card de resposta —— claro */
+        #responseCard {
+            background-color: rgb(233, 227, 222) !important;
+            /* igual ao textarea */
+            background-image: none !important;
+            color: var(--text) !important;
+        }
+
+        /* Tema escuro */
+        :root[data-theme="dark"] #responseCard {
+            background-color: rgba(255, 255, 255, 0.03) !important;
+            background-image: none !important;
+        }
+
+        /* Remove a luz/grade no topo dos inputs e do response card apenas no tema claro */
+        :root:not([data-theme="dark"]) #textClassify,
+        :root:not([data-theme="dark"]) #textAnalyze,
+        :root:not([data-theme="dark"]) #responseCard {
+            /* cor de fundo desejada */
+            background-image: none !important;
+            background-color: #f6efe8 !important;
+            /* troque por outra cor se quiser */
+            /* remove inset highlights, mantendo só uma sombra externa discreta */
+            box-shadow: 0 4px 12px rgba(2, 6, 23, 0.03) !important;
+        }
+
+        /* placeholder claro */
+        :root:not([data-theme="dark"]) #textClassify::placeholder,
+        :root:not([data-theme="dark"]) #textAnalyze::placeholder {
+            color: rgba(15, 23, 42, 0.45) !important;
+        }
+
+        /* --- Estado padrão dos botões de aba: aparência de CARD --- */
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.06);
+            /* leve fundo */
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            /* contorno suave */
+            border-radius: 12px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+            /* sombra para parecer card */
+            transition: all .25s ease-out !important;
+        }
+
+        /* Hover mais evidente para reforçar que é clicável */
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
+            background: rgba(255, 255, 255, 0.10);
+        }
+
+        /* --- Aba ATIVA continua com seu estilo (apenas combinando melhor) --- */
+        .tab-btn.active {
+            background: linear-gradient(90deg, rgba(250, 200, 150, 0.14), rgba(250, 200, 150, 0.04));
+            border-left: 4px solid var(--accent-600);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            transform: translateY(0);
+            /* remove o efeito hover no ativo */
+        }
+
+        /* ==== Estilo bonito para campos (tema claro) ==== */
+        :root:not([data-theme="dark"]) {
+            --lc-bg-top: #ffffff;
+            /* topo do gradiente */
+            --lc-bg-bottom: #f6efe8;
+            /* base do gradiente (creme) */
+            --lc-border: rgba(15, 23, 42, 0.06);
+            --lc-shadow: rgba(2, 6, 23, 0.06);
+            --lc-inset: rgba(255, 255, 255, 0.7);
+            --lc-accent-glow: rgba(255, 122, 0, 0.08);
+        }
+
+        /* Aplica ao textarea do classify/analyze e ao responseCard */
+        :root:not([data-theme="dark"]) #textClassify,
+        :root:not([data-theme="dark"]) #textAnalyze,
+        :root:not([data-theme="dark"]) #responseCard {
+            background: linear-gradient(180deg, var(--lc-bg-top), var(--lc-bg-bottom)) !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            border: 1px solid var(--lc-border) !important;
+            border-radius: 12px !important;
+            box-shadow:
+                0 18px 40px var(--lc-shadow),
+                inset 0 1px 0 var(--lc-inset)
+                /* top highlight */
+                ,
+                inset 0 -6px 18px rgba(0, 0, 0, 0.02);
+            /* subtle inner depth */
+            transition: box-shadow .18s ease, transform .12s ease, border-color .12s ease;
+            color: var(--text) !important;
+        }
+
+        /* Ajustes específicos para o response content */
+        :root:not([data-theme="dark"]) #responseCard {
+            padding: 14px !important;
+        }
+
+        /* Placeholder contrast */
+        :root:not([data-theme="dark"]) #textClassify::placeholder,
+        :root:not([data-theme="dark"]) #textAnalyze::placeholder {
+            color: rgba(15, 23, 42, 0.42) !important;
+        }
+
+        /* Focus state — halo e borda com accent suave */
+        :root:not([data-theme="dark"]) #textClassify:focus,
+        :root:not([data-theme="dark"]) #textAnalyze:focus,
+        :root:not([data-theme="dark"]) #responseCard:focus {
+            border-color: rgba(255, 122, 0, 0.9) !important;
+            box-shadow:
+                0 26px 60px rgba(2, 6, 23, 0.08),
+                0 0 0 8px var(--lc-accent-glow),
+                inset 0 1px 0 var(--lc-inset);
+            transform: translateY(-1px);
+            outline: none;
+        }
+
+        /* Responsivo */
+        @media (max-width:900px) {
+
+            :root:not([data-theme="dark"]) #textClassify,
+            :root:not([data-theme="dark"]) #textAnalyze {
+                min-height: 120px;
+            }
+
+            :root:not([data-theme="dark"]) #responseCard {
+                min-height: 90px;
+            }
+        }
+
+        /* BOTÃO DE UPLOAD — MAIS DESTAQUE EM AMBOS OS TEMAS */
+        .file-btn {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 14px;
+
+            /* Fundo mais visível */
+            background: rgba(0, 0, 0, 0.06);
+
+            /* Borda mais clara e perceptível */
+            border: 1.6px solid rgba(0, 0, 0, 0.12);
+
+            /* Sombra suave */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+            transition: all 0.22s ease;
+        }
+
+        /* HOVER DESTACADO */
+        .file-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(0, 0, 0, 0.10);
+            border-color: rgba(0, 0, 0, 0.18);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* TEMA ESCURO — ajuste para contraste */
+        html[data-theme="dark"] .file-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.4px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        }
+
+        html[data-theme="dark"] .file-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        }
+
+        /* ==== Smooth theme transitions (lightweight) ==== */
+        /* Apply transitions to a focused set of properties and containers */
+        :root,
+        html,
+        body,
+        .glass,
+        .card-surface,
+        .card-surface-plain,
+        textarea,
+        #responseCard,
+        .tab-btn,
+        .file-btn,
+        .btn-accent,
+        .btn-clear,
+        #respostaCardWrapper,
+        #responseCard,
+        #responseText {
+            transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease, box-shadow 260ms ease;
+            will-change: background-color, color, box-shadow;
+        }
+
+        /* Make sure global background also transitions smoothly */
+        body {
+            transition: background 260ms ease, color 260ms ease;
+        }
+
+        /* Respect user preference for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            :root,
+            html,
+            body,
+            .glass,
+            .card-surface,
+            .card-surface-plain,
+            textarea,
+            #responseCard,
+            .tab-btn,
+            .file-btn,
+            .btn-accent,
+            .btn-clear,
+            #respostaCardWrapper,
+            #responseCard,
+            #responseText {
+                transition: none !important;
+                will-change: auto !important;
+            }
+
+            body {
+                transition: none !important;
+            }
+        }
+
+
+        /* === THEME SWITCH === */
+        .theme-switch {
+            position: relative;
+            width: 54px;
+            height: 28px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .theme-switch input {
+            display: none;
+        }
+
+        .theme-switch .slider {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.14));
+            border-radius: 40px;
+            transition: all .25s ease;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25);
+        }
+
+        html[data-theme="dark"] .theme-switch .slider {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+        }
+
+        .theme-switch .slider::before {
+            content: "";
+            position: absolute;
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            top: 3px;
+            background: white;
+            border-radius: 50%;
+            transition: all .25s cubic-bezier(.3, .9, .3, 1.2);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Modo escuro: bolinha vai para direita */
+        .theme-switch input:checked+.slider::before {
+            transform: translateX(26px);
+            background: #f97316;
+            /* laranja */
+            box-shadow: 0 4px 10px rgba(255, 122, 0, 0.45);
+        }
+
+        /* === [NOVO] ESTILO DE DRAG & DROP === */
+        /* Adiciona um destaque visual (borda e sombra) quando o arquivo está sendo arrastado por cima */
+        .file-btn.dragover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.1), 0 0 0 3px var(--accent);
+            border-color: var(--accent);
+        }
+
+        html[data-theme="dark"] .file-btn.dragover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 3px var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loadingOverlay">
+        <div class="loader"><svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2v4" stroke="white" stroke-width="2" stroke-linecap="round" />
+                <path d="M12 18v4" stroke="white" stroke-width="2" stroke-linecap="round" />
+                <path d="M4.93 4.93l2.83 2.83" stroke="white" stroke-width="2" stroke-linecap="round" />
+                <path d="M16.24 16.24l2.83 2.83" stroke="white" stroke-width="2" stroke-linecap="round" />
+            </svg></div>
+    </div>
+
+    <div id="toast"></div>
+
+    <div class="max-w-6xl mx-auto p-6">
+        <header class="flex items-center gap-4 mb-6">
+            <img src="/static/img/logo.png" alt="Logo" class="w-12 h-12 rounded-md object-contain" />
+            <div>
+                <h1 class="text-xl font-semibold">InboxLogic</h1>
+                <p class="text-sm text-[color:var(--muted)]">Insights e respostas inteligentes com IA.</p>
+            </div>
+            <div class="ml-auto flex items-center gap-3">
+                <label id="themeSwitch" class="theme-switch">
+                    <input type="checkbox" id="themeToggleInput">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </header>
+
+        <main class="glass p-5 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <nav class="md:col-span-1">
+                <div class="tab-list space-y-3">
+                    <button class="tab-btn active" data-tab="classify" id="tabBtnClassify">
+                        <div class="text-sm font-semibold">Classificar & Responder</div>
+                        <div class="text-xs text-[color:var(--muted)]">Classifica o e-mail e gera uma resposta
+                            automática clara e eficiente.</div>
+                    </button>
+                    <button class="tab-btn" data-tab="analyze" id="tabBtnAnalyze">
+                        <div class="text-sm font-semibold">Análise & Insights</div>
+                        <div class="text-xs text-[color:var(--muted)]">Resume grandes volumes de e-mails, identifica
+                            padrões e destaca pontos críticos.</div>
+                    </button>
+                </div>
+                <div id="howtoBox" class="mt-6 card-surface-plain text-sm text-[color:var(--muted)]"></div>
+            </nav>
+
+            <section class="md:col-span-3 space-y-6">
+                <div id="tab-classify" class="tab-panel">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-lg card-surface">
+                            <label class="field-label" for="textClassify">Cole o e-mail e deixe a IA analisar…</label>
+                            <textarea id="textClassify" rows="7" class="mt-2 rounded-md textarea-full"
+                                placeholder=" Adicione o texto que será classificado…"></textarea>
+
+                            <div class="mt-3 flex items-center gap-3">
+                                <label class="file-btn small" id="fileBtnClassify" role="button" tabindex="0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[color:var(--muted)]"
+                                        viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 7v10a2 2 0 0 0 2 2h12" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                    <div class="flex flex-col text-left"><span id="fileClassifyLabel"
+                                            class="text-sm text-[color:var(--muted)]">Clique para selecionar (.txt,
+                                            .pdf, .mbox)</span><span id="fileClassifyHint"
+                                            class="text-xs text-[color:var(--muted)]">ou arraste para cá</span></div>
+                                    <input id="fileClassify" type="file" accept=".txt,.pdf,.mbox" class="hidden" />
+                                </label>
+
+                            </div>
+
+                            <div class="mt-4 flex items-center gap-3">
+                                <button id="btnClassify"
+                                    class="btn-accent px-4 py-2 rounded-md flex items-center gap-2"><svg id="spinClass"
+                                        class="w-4 h-4 animate-spin hidden" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"
+                                            stroke-opacity=".22" fill="none" />
+                                    </svg>Classificar & Responder</button>
+                                <button id="btnClearClass" class="btn-clear">Limpar</button>
+                            </div>
+
+                            <p id="errorClass" class="mt-3 text-sm text-red-500 hidden"></p>
+                        </div>
+
+                        <div class="p-4 rounded-lg card-surface" id="respostaCardWrapper">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-sm font-semibold">Resposta gerada</h4>
+                                    <div class="text-xs text-[color:var(--muted)]">A resposta sugerida pela IA será
+                                        exibida aqui.
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-2">
+                                    <button id="btnCopyResponse" title="Copiar resposta"
+                                        class="px-2 py-1 rounded-md glass text-sm">📋 Copiar</button>
+                                </div>
+                            </div>
+
+
+
+                            <div id="responseCard" class="mt-3">
+                                <div id="responseText" class="text-sm leading-relaxed placeholder-muted"></div>
+                                <div id="skeletonResponse" class="mt-2 hidden">
+                                    <div class="skeleton mb-2"></div>
+                                    <div class="skeleton mb-2" style="width:80%;"></div>
+                                    <div class="skeleton" style="width:60%;"></div>
+                                </div>
+                            </div>
+
+                            <details id="debugPanel" class="mt-3 text-xs text-[color:var(--muted)] hidden">
+                                <summary class="cursor-pointer">Debug: label, score e raw</summary>
+                                <pre id="metaClass" class="mt-2 pretty"
+                                    style="background:rgba(0,0,0,0.04); padding:8px; border-radius:6px;"></pre>
+                                <div class="mt-2"><strong>Label:</strong> <span id="label">—</span>
+                                    &nbsp;<strong>Score:</strong> <span id="score">—</span></div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-analyze" class="tab-panel hidden">
+                    <div class="p-4 rounded-lg card-surface" id="respostaCardWrapper">
+                        <label class="field-label" for="textAnalyze"> Cole seus e-mails para análise</label>
+                        <textarea id="textAnalyze" rows="5" class="mt-2 rounded-md textarea-full"
+                            placeholder=" Cole vários e-mails ou envie um .mbox, a IA faz o restante."></textarea>
+
+                        <div class="mt-3 flex items-center gap-3">
+                            <label class="file-btn" id="fileBtnAnalyze" role="button" tabindex="0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[color:var(--muted)]"
+                                    viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <div class="flex flex-col text-left"><span id="fileAnalyzeLabel"
+                                        class="text-sm text-[color:var(--muted)]">Clique para selecionar (.txt, .pdf,
+                                        .mbox)</span><span class="text-xs text-[color:var(--muted)]">ou arraste para
+                                        cá</span></div>
+                                <input id="fileAnalyze" type="file" accept=".txt,.pdf,.mbox" class="hidden" />
+                            </label>
+
+                            <button id="btnClearAnalyze" class="btn-clear">Limpar</button>
+
+                            <div class="ml-auto"><button id="btnAnalyze"
+                                    class="btn-accent px-4 py-2 rounded-md flex items-center gap-2"><svg id="spinAnal"
+                                        class="w-4 h-4 animate-spin hidden" viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2"
+                                            stroke-opacity=".22" fill="none" />
+                                    </svg>Gerar Análise</button></div>
+                        </div>
+
+                        <div id="insightsArea" class="mt-6 grid grid-cols-1 gap-4">
+                            <div id="insightSummary" class="action-card hidden transition-all">
+                                <div class="text-sm font-semibold mb-1">Resumo</div>
+                                <div id="insightSummaryText" class="text-sm text-[color:var(--muted)]"></div>
+                            </div>
+
+                            <div id="insightThemes" class="flex flex-wrap gap-2"></div>
+                            <div id="insightActions" class="grid gap-3"></div>
+
+                            <div class="flex gap-2 mt-2"><button id="btnCopyInsights"
+                                    class="px-3 py-2 rounded-md glass text-sm">📋 Copiar insights em JSON</button>
+
+                                <pre id="analiseJSON" class="pretty mt-2 hidden"
+                                    style="background:var(--panel-solid); color:var(--input-text); padding:10px; border-radius:8px"></pre>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </main>
+
+        <footer class="mt-6 p-4 rounded-lg card-surface">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+                <div class="flex items-center gap-4"><img src="/static/img/logo.png" alt="Logo"
+                        class="w-12 h-12 object-contain" />
+                    <div>
+                        <div class="text-sm font-semibold">InboxLogic</div>
+                        <div class="text-xs text-[color:var(--muted)]">Insights e respostas inteligentes com IA.</div>
+                    </div>
+                </div>
+
+                <div class="p-0">
+                    <div class="text-sm font-semibold mb-2">FAQ</div>
+                    <div class="text-sm text-[color:var(--muted)] space-y-2">
+                        <details>
+                            <summary class="cursor-pointer font-medium">O que este sistema faz exatamente?</summary>
+                            <div class="mt-1 p-2">Classifica e resume e-mails automaticamente, gerando insights, padrões
+                                e respostas sugeridas de forma inteligente.</div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium">Quais tipos de arquivo posso enviar?</summary>
+                            <div class="mt-1 p-2">Você pode enviar .txt, .pdf ou .mbox contendo um ou vários e-mails.
+                            </div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium">Meus dados ficam armazenados?</summary>
+                            <div class="mt-1 p-2">No protótipo, nenhum dado é salvo ou compartilhado. Tudo é processado
+                                apenas durante a sessão.</div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium">E se o .mbox for muito grande?</summary>
+                            <div class="mt-1 p-2">O backend tem fallback; recomenda-se dividir em lotes.</div>
+                        </details>
+                        <details>
+                            <summary class="cursor-pointer font-medium">A IA sempre acerta?</summary>
+                            <div class="mt-1 p-2">Nenhum modelo acerta 100% das vezes, mas o sistema possui:
+                                <br>• prompts otimizados,
+                                <br>• validação de saída,
+                                <br>• heurísticas de reforço,
+                                <br>• fallback seguro.
+                                <br>Isso garante respostas estáveis mesmo em textos ruins, truncados ou confusos.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="p-0">
+                    <div class="text-sm font-semibold mb-2">Info</div>
+                    <div class="text-sm text-[color:var(--muted)]">Desenvolvido por Danilo Oliveira.<br>No momento
+                        utiliza o modelo gpt-4o-mini.<br>Trazendo o maximo de inteligencia com um bom tempo de resposta e maior economia de tokens.</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // --- Helpers: toast / loading / theme ---
+        const toastEl = document.getElementById('toast');
+        // mostra um toast simples (texto curto)
+        function toast(msg, t = 2000) { if (!toastEl) return; toastEl.className = ''; toastEl.textContent = ''; toastEl.innerHTML = `<div class="icon">i</div><div class="body"><div class="title">${escapeHtml(msg)}</div></div>`; toastEl.classList.add('show'); clearTimeout(toastEl._t); toastEl._t = setTimeout(() => toastEl.classList.remove('show'), t); }
+
+        // mostra toast com tipo (success/error/info) e subtítulo
+        function showToast(msg, type = 'info', subtitle = '') { const el = toastEl; if (!el) return; el.className = ''; el.classList.add(type); el.innerHTML = `<div class="icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'i'}</div><div class="body"><div class="title">${escapeHtml(msg)}</div><div class="sub">${escapeHtml(subtitle)}</div></div>`; el.classList.add('show'); clearTimeout(el.__hideTimer); el.__hideTimer = setTimeout(() => el.classList.remove('show'), 3500); }
+
+        const loadingOverlay = document.getElementById('loadingOverlay');
+        // mostra overlay de loading
+        function showLoading() { if (loadingOverlay) loadingOverlay.classList.add('show'); }
+        // esconde overlay de loading
+        function hideLoading() { if (loadingOverlay) loadingOverlay.classList.remove('show'); }
+
+        // aplica tema no root e salva no localStorage
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('autou_theme', theme);
+
+            const btnTheme = document.getElementById('btnTheme');
+            if (btnTheme)
+                btnTheme.innerText = theme === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+        }
+
+        // inicializa o tema com valor salvo ou preferencia do sistema
+        (function initTheme() {
+            const saved = localStorage.getItem('autou_theme') ||
+                (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+            // aplica tema inicial
+            document.documentElement.setAttribute('data-theme', saved);
+
+            // deixa o switch na posição certa
+            const switchInput = document.getElementById('themeToggleInput');
+            if (switchInput) {
+                switchInput.checked = (saved === 'dark');
+                // ao mudar switch atualiza tema e salva
+                switchInput.addEventListener('change', () => {
+                    const newTheme = switchInput.checked ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('autou_theme', newTheme);
+                });
+            }
+        })();
+
+        // --- Tabs & contextual howto ---
+        const tabBtnClassify = document.getElementById('tabBtnClassify');
+        const tabBtnAnalyze = document.getElementById('tabBtnAnalyze');
+        // define visualmente a aba ativa
+        function setActiveTab(btn) { [tabBtnClassify, tabBtnAnalyze].forEach(b => b.classList.remove('active')); if (btn) btn.classList.add('active'); }
+        // mostra painel da aba selecionada
+        function showTab(name) { document.querySelectorAll('.tab-panel').forEach(p => { if (p.id === 'tab-' + name) { p.classList.remove('hidden'); p.style.opacity = ''; p.style.transform = ''; } else { p.classList.add('hidden'); p.style.opacity = '0'; p.style.transform = 'translateY(8px)'; } }); }
+        // atualiza caixa de instruções rápida
+        function setHowTo(tab) { const box = document.getElementById('howtoBox'); if (!box) return; if (tab === 'classify') { box.innerHTML = `<div class="font-semibold mb-1">Como usar — Classificar</div><ol class="list-decimal pl-5 text-sm text-[color:var(--muted)] space-y-1"><li>Cole o e-mail ou envie um arquivo (.txt, .pdf, .mbox).</li><li>Clique em <strong>Classificar & Responder</strong>.</li><li>Use o botão <strong>Copiar</strong> para copiar a resposta.</li></ol>` } else { box.innerHTML = `<div class="font-semibold mb-1">Como usar — Análise</div><ol class="list-decimal pl-5 text-sm text-[color:var(--muted)] space-y-1"><li>Cole vários e-mails ou envie um .mbox.</li><li>Clique em <strong>Gerar Análise</strong>.</li><li>Use <em>Copiar insights</em> ou veja o JSON bruto.</li></ol>` } }
+        showTab('classify'); setHowTo('classify'); if (tabBtnClassify) tabBtnClassify.classList.add('active');
+        // clique em abas altera painel e instruções
+        if (tabBtnClassify) tabBtnClassify.addEventListener('click', () => { setActiveTab(tabBtnClassify); showTab('classify'); setHowTo('classify'); const fbtn = document.getElementById('fileBtnClassify'); if (fbtn) fbtn.classList.add('small'); });
+        if (tabBtnAnalyze) tabBtnAnalyze.addEventListener('click', () => { setActiveTab(tabBtnAnalyze); showTab('analyze'); setHowTo('analyze'); const fbtn = document.getElementById('fileBtnClassify'); if (fbtn) fbtn.classList.remove('small'); });
+
+        // --- File inputs ---
+        const fileClassify = document.getElementById('fileClassify'); const fileClassifyLabel = document.getElementById('fileClassifyLabel'); if (fileClassify) fileClassify.addEventListener('change', () => { const f = fileClassify.files[0]; if (fileClassifyLabel) fileClassifyLabel.innerText = f ? f.name : 'Clique para selecionar (.txt, .pdf, .mbox)'; });
+        const fileAnalyze = document.getElementById('fileAnalyze'); const fileAnalyzeLabel = document.getElementById('fileAnalyzeLabel'); if (fileAnalyze) fileAnalyze.addEventListener('change', () => { const f = fileAnalyze.files[0]; if (fileAnalyzeLabel) fileAnalyzeLabel.innerText = f ? f.name : 'Clique para selecionar (.txt, .pdf, .mbox)'; });
+
+        // --- [NOVO] Drag & Drop ---
+        /**
+         * Adiciona listeners de drag-and-drop a um elemento (label) para
+         * popular um input (fileInputEl) e atualizar um label (textLabelEl).
+         */
+        function setupDragDrop(dropZoneEl, fileInputEl, textLabelEl) {
+            if (!dropZoneEl || !fileInputEl || !textLabelEl) return;
+
+            // Prevenir comportamento padrão do navegador (que é abrir o arquivo)
+            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                dropZoneEl.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }, false);
+            });
+
+            // Adicionar classe visual ao arrastar por cima
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropZoneEl.addEventListener(eventName, () => {
+                    dropZoneEl.classList.add('dragover');
+                }, false);
+            });
+
+            // Remover classe visual ao sair ou soltar
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropZoneEl.addEventListener(eventName, () => {
+                    dropZoneEl.classList.remove('dragover');
+                }, false);
+            });
+
+            // Lidar com o arquivo soltado
+            dropZoneEl.addEventListener('drop', (e) => {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+
+                if (files && files.length > 0) {
+                    fileInputEl.files = files; // Associa o arquivo ao input hidden
+                    textLabelEl.innerText = files[0].name; // Atualiza o label
+
+                    // O 'change' event não é disparado automaticamente ao setar .files
+                    // Mas nosso 'change' listener original só atualizava o label,
+                    // o que já fizemos acima. Então está tudo certo.
+                }
+            }, false);
+        }
+
+        // Inicializar o Drag & Drop nos dois botões
+        // (As variáveis fileClassify, fileClassifyLabel, etc. já foram definidas acima)
+        const dropZone1 = document.getElementById('fileBtnClassify');
+        const dropZone2 = document.getElementById('fileBtnAnalyze');
+
+        setupDragDrop(dropZone1, fileClassify, fileClassifyLabel);
+        setupDragDrop(dropZone2, fileAnalyze, fileAnalyzeLabel);
+        // --- Fim do Drag & Drop ---
+
+
+        // --- Debug toggle (botão pode ser re-adicionado futuramente) ---
+        const toggleDebug = document.getElementById('toggleDebug'); const debugPanel = document.getElementById('debugPanel'); if (toggleDebug && debugPanel) toggleDebug.addEventListener('click', () => { debugPanel.classList.toggle('hidden'); if (!debugPanel.classList.contains('hidden')) debugPanel.open = true; });
+
+        // --- Fetch helper ---
+        const apiBase = '/';
+        // helper para enviar FormData e parsear JSON, lança em caso de erro
+        async function postFormData(path, formData) { const res = await fetch(path, { method: 'POST', body: formData }); const text = await res.text(); let json; try { json = JSON.parse(text); } catch (e) { throw new Error('Resposta inválida do servidor: ' + text); } if (!res.ok) throw new Error(json.erro || JSON.stringify(json)); return json; }
+
+        // --- Timers ---
+        // funções utilitárias simples para medir tempo de execução
+        function now() { return (typeof performance !== 'undefined') ? performance.now() : Date.now(); }
+        function startTimer() { return { t0: now() }; }
+        function stopTimer(token) { if (!token || !token.t0) return 0; const ms = now() - token.t0; return Math.max(0, ms / 1000); }
+
+        // --- Classify flow ---
+        const btnClassify = document.getElementById('btnClassify'); if (btnClassify) btnClassify.addEventListener('click', async () => {
+            const t = startTimer(); const spin = document.getElementById('spinClass'); if (spin) spin.classList.remove('hidden'); const sk = document.getElementById('skeletonResponse'); if (sk) sk.classList.remove('hidden'); const respTextEl = document.getElementById('responseText'); if (respTextEl) respTextEl.innerText = ''; const errEl = document.getElementById('errorClass'); if (errEl) errEl.classList.add('hidden'); showLoading();
+            try {
+                // pega texto e arquivo (se houver) e valida entrada
+                const textEl = document.getElementById('textClassify'); const text = textEl ? textEl.value : ''; const file = (fileClassify && fileClassify.files && fileClassify.files[0]) ? fileClassify.files[0] : null; if (!text && !file) throw new Error('Envie texto ou arquivo para classificar.');
+                const fd = new FormData(); if (text) fd.append('text', text); if (file) fd.append('file', file);
+                // envia ao endpoint /classify
+                const data = await postFormData(apiBase + 'classify', fd);
+
+                // atualiza UI com resposta e metadados
+                if (respTextEl) respTextEl.innerText = data.resposta || '';
+                const metaEl = document.getElementById('metaClass'); if (metaEl) metaEl.innerText = JSON.stringify(data.meta || {}, null, 2);
+                const labelEl = document.getElementById('label'); if (labelEl) labelEl.innerText = data.classificacao?.label || '—';
+                const scoreEl = document.getElementById('score'); if (scoreEl) scoreEl.innerText = data.classificacao?.score ?? '—';
+                if (typeof ensureResponseTop === 'function') ensureResponseTop();
+
+                // define badge color baseado no label retornado
+                const labelRaw = (data.classificacao?.label || '').toLowerCase(); const badge = document.getElementById('labelBadge');
+                if (badge) {
+                    if (labelRaw.includes('produtivo')) { badge.className = 'badge-prod'; badge.innerText = 'Produtivo'; }
+                    else if (labelRaw.includes('improdutivo')) { badge.className = 'badge-improd'; badge.innerText = 'Improdutivo'; }
+                    else { badge.className = 'badge-neutro'; badge.innerText = 'Neutro'; }
+                } else {
+                    // fallback simples caso badge não exista
+                    const labelFallback = document.getElementById('label');
+                    if (labelFallback) {
+                        if (labelRaw.includes('produtivo')) labelFallback.innerText = 'Produtivo';
+                        else if (labelRaw.includes('improdutivo')) labelFallback.innerText = 'Improdutivo';
+                        else labelFallback.innerText = '—';
+                    }
+                }
+
+                const elapsed = stopTimer(t); showToast('Processamento concluído', 'success', `Concluído em ${elapsed.toFixed(1)}s`);
+                toast('Classificação pronta', 1200);
+            } catch (err) {
+                // mostra erro e registra no campo de erro
+                const errEl2 = document.getElementById('errorClass'); if (errEl2) { errEl2.innerText = err.message || String(err); errEl2.classList.remove('hidden'); }
+                const elapsed = stopTimer(t); showToast('Erro ao processar', 'error', `Falhou em ${elapsed.toFixed(1)}s`); toast('Erro: ' + (err.message || ''), 2000);
+            } finally { const spin2 = document.getElementById('spinClass'); if (spin2) spin2.classList.add('hidden'); const sk2 = document.getElementById('skeletonResponse'); if (sk2) sk2.classList.add('hidden'); hideLoading(); }
+        });
+
+        // --- Copy / Clear classify ---
+        const btnCopyResponse = document.getElementById('btnCopyResponse');
+        if (btnCopyResponse) {
+            // copia texto de resposta para clipboard
+            btnCopyResponse.addEventListener('click', () => {
+                const txtEl = document.getElementById('responseText'); const txt = txtEl ? txtEl.innerText || '' : '';
+                if (!txt) return toast('Nada para copiar', 1200);
+                navigator.clipboard.writeText(txt).then(() => toast('Resposta copiada'), () => toast('Falha ao copiar'));
+            });
+        }
+
+        const btnClearClass = document.getElementById('btnClearClass');
+        if (btnClearClass) {
+            // limpa inputs e UI relacionados à classificação
+            btnClearClass.addEventListener('click', () => {
+                const tEl = document.getElementById('textClassify'); if (tEl) tEl.value = '';
+                if (fileClassify) fileClassify.value = '';
+                if (fileClassifyLabel) fileClassifyLabel.innerText = 'Clique para selecionar (.txt, .pdf, .mbox)';
+                const respEl = document.getElementById('responseText'); if (respEl) respEl.innerText = '';
+                const metaEl2 = document.getElementById('metaClass'); if (metaEl2) metaEl2.innerText = '';
+                const badge = document.getElementById('labelBadge'); if (badge) { badge.className = 'badge-neutro'; badge.innerText = '—'; }
+                const labelEl2 = document.getElementById('label'); if (labelEl2) labelEl2.innerText = '—';
+                const scoreEl2 = document.getElementById('score'); if (scoreEl2) scoreEl2.innerText = '—';
+            });
+        }
+
+        // --- Analyze flow ---
+        const btnAnalyze = document.getElementById('btnAnalyze'); if (btnAnalyze) btnAnalyze.addEventListener('click', async () => {
+            const spin = document.getElementById('spinAnal'); if (spin) spin.classList.remove('hidden'); const insightSummary = document.getElementById('insightSummary'); if (insightSummary) insightSummary.classList.add('hidden'); const themes = document.getElementById('insightThemes'); if (themes) themes.innerHTML = ''; const actions = document.getElementById('insightActions'); if (actions) actions.innerHTML = ''; const analJson = document.getElementById('analiseJSON'); if (analJson) analJson.classList.add('hidden'); showLoading();
+            try {
+                // coleta texto/arquivo e valida
+                const textEl = document.getElementById('textAnalyze'); const text = textEl ? textEl.value : ''; const file = (fileAnalyze && fileAnalyze.files && fileAnalyze.files[0]) ? fileAnalyze.files[0] : null; if (!text && !file) throw new Error('Envie texto ou arquivo para analisar.');
+                const fd = new FormData(); if (text) fd.append('text', text); if (file) fd.append('file', file);
+                // envia ao endpoint /analise
+                const data = await postFormData(apiBase + 'analise', fd);
+                const anal = data.analise || {};
+                if (analJson) analJson.innerText = JSON.stringify(anal, null, 2);
+                if (anal.resumo) { const summaryText = document.getElementById('insightSummaryText'); if (summaryText) summaryText.innerText = anal.resumo; if (insightSummary) insightSummary.classList.remove('hidden'); }
+                if (Array.isArray(anal.temas) && themes) { anal.temas.forEach(t => { const chip = document.createElement('div'); chip.className = 'chip'; chip.innerText = t; themes.appendChild(chip); }); }
+                if (Array.isArray(anal.acoes) && actions) { anal.acoes.forEach((a, i) => { const card = document.createElement('div'); card.className = 'action-card'; card.style.opacity = 0; card.style.transform = 'translateY(6px)'; card.innerHTML = `<div class="text-sm font-semibold">Ação ${i + 1}</div><div class="text-sm text-[color:var(--muted)] mt-1">${a}</div>`; actions.appendChild(card); setTimeout(() => { card.style.transition = 'all .36s cubic-bezier(.2,.9,.2,1)'; card.style.opacity = 1; card.style.transform = 'translateY(0)'; }, 80 + i * 90); }); }
+                toast('Análise pronta', 1200);
+            } catch (err) {
+                // em caso de erro, mostra JSON bruto com mensagem
+                const analJson2 = document.getElementById('analiseJSON'); if (analJson2) { analJson2.innerText = 'Erro: ' + (err.message || ''); analJson2.classList.remove('hidden'); }
+                toast('Erro: ' + (err.message || ''), 2000);
+            } finally { if (spin) spin.classList.add('hidden'); hideLoading(); }
+        });
+
+        // --- Copy insights / show raw ---
+        const btnCopyInsights = document.getElementById('btnCopyInsights');
+        if (btnCopyInsights) {
+            // copia JSON de insights
+            btnCopyInsights.addEventListener('click', () => {
+                const jEl = document.getElementById('analiseJSON'); const j = jEl ? jEl.innerText || '' : '';
+                if (!j) return toast('Nada para copiar', 1200);
+                navigator.clipboard.writeText(j).then(() => toast('Insights JSON copiado'), () => toast('Falha ao copiar'));
+            });
+        }
+        const btnShowRaw = document.getElementById('btnShowRaw'); if (btnShowRaw) btnShowRaw.addEventListener('click', () => { const el = document.getElementById('analiseJSON'); if (!el) return; el.classList.toggle('hidden'); if (!el.classList.contains('hidden')) el.scrollIntoView({ behavior: 'smooth' }); });
+
+        // --- FAQ helper if header button re-added later ---
+        const btnHelp = document.getElementById('btnHelp'); if (btnHelp) btnHelp.addEventListener('click', () => { document.querySelector('footer').scrollIntoView({ behavior: 'smooth' }); toast('FAQ', 1200); });
+
+        // --- Auto-scroll observer ---
+        // garante que sempre vejamos o topo da resposta quando novo conteúdo chega
+        function ensureResponseTop() {
+            const rc = document.getElementById('responseCard'); if (!rc) return; rc.scrollTop = 0; if (typeof adjustResponseMaxHeight === 'function') try { adjustResponseMaxHeight(); } catch (e) { }
+        }
+        (function () { const responseText = document.getElementById('responseText'); const rc = document.getElementById('responseCard'); if (!responseText || !rc) return; const observer = new MutationObserver(() => { rc.scrollTop = 0; }); observer.observe(responseText, { childList: true, characterData: true, subtree: true }); })();
+
+        // --- small utilities ---
+        // escapa HTML para evitar injeção simples em toasts e textos
+        function escapeHtml(s = '') { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+    </script>
+</body>
+
+</html>
