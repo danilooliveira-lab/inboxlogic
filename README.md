@@ -12,20 +12,20 @@
 
 ### 🌙 Tema Escuro
 
-![Tela Dark](img/readmeimg/tela-dark-1.png)
+![Tela Dark](app/static/img/readmeimg/tela-dark-1.png)
 
 ### ☀️ Tema Claro
 
-![Tela Light](img/readmeimg/tela-light-1.png)
+![Tela Light](app/static/img/readmeimg/tela-light-1.png)
 
 ### 🧠 Módulo de Classificação
 
-![Classificar](img/readmeimg/classificacao.png)
+![Classificar](app/static/img/readmeimg/classificacao.png)
 
 ### 📊 Módulo de Análise e Insights
 
-![Insights](img/readmeimg/insights.png)
-![Insights](img/readmeimg/insights2.png)
+![Insights](app/static/img/readmeimg/insights.png)
+![Insights](app/static/img/readmeimg/insights2.png)
 
 ---
 
