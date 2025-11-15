@@ -22,7 +22,7 @@
 
 ### 📊 Módulo de Análise e Insights
 
-![Insights](app/static/img/readmeimg/insights_full.png)
+![Insights](app/static/img/readmeimg/imagemjuntal.png)
 
 ---
 
