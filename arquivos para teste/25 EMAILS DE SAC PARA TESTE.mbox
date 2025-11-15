@@ -1,0 +1,1149 @@
+From mariana.silva@example.com Sat, 15 Nov 2025 21:18:00 -0000
+Message-ID: <d182b66a-88da-468d-9c76-1f8da02054c9@example.com>
+Date: Sat, 15 Nov 2025 21:18:00 -0000
+From: Mariana Silva <mariana.silva@example.com>
+To: Suporte <suporte@example.com>
+Subject: Erro ao acessar conta
+Received: from mail1.example.com (mail4.example.com [192.0.2.204]) by mx.example.com with ESMTP id 4a9b81eb; Sat, 15 Nov 2025 21:18:00 -0000
+Reply-To: mariana.silva@example.com
+User-Agent: Outlook 16.0
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="7264c6cd231b428a9d1453399d761793"
+
+--7264c6cd231b428a9d1453399d761793
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: erro ao acessar conta. Detalhes: test case #1 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 306' ou 'Timeout após 12s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Mariana Silva
+mariana.silva@example.com
+Tel: (11) 99008-1312
+
+--7264c6cd231b428a9d1453399d761793
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: erro ao acessar conta. Detalhes: test case #1 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 306’ ou ’Timeout após 12s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Mariana Silva<br/>mariana.silva@example.com<br/>Tel: (11) 99008-1312</p><p>--<br/>Att,<br/>Mariana Silva</p></body></html>
+
+--7264c6cd231b428a9d1453399d761793--
+
+
+From joao.pereira@example.com Sun, 16 Nov 2025 07:27:00 -0000
+Message-ID: <049c64c3-0efd-4fb1-8bf3-5f1a113f16ac@example.com>
+Date: Sun, 16 Nov 2025 07:27:00 -0000
+From: João Pereira <joao.pereira@example.com>
+To: Suporte <suporte@example.com>
+Subject: Boleto não gerado
+Received: from mail5.example.com (mail2.example.com [192.0.2.127]) by mx.example.com with ESMTP id 18013ea3; Sun, 16 Nov 2025 07:27:00 -0000
+Reply-To: joao.pereira@example.com
+User-Agent: Outlook 16.0
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="8c038312606a4d9db4c3b786f9edfd23"
+
+--8c038312606a4d9db4c3b786f9edfd23
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: boleto não gerado. Detalhes: test case #2 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 135' ou 'Timeout após 2s'.
+
+Impacto: médio.
+
+Aguardo retorno,
+
+João Pereira
+joao.pereira@example.com
+Tel: (11) 93472-2158
+
+--8c038312606a4d9db4c3b786f9edfd23
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: boleto não gerado. Detalhes: test case #2 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 135’ ou ’Timeout após 2s’.<br/><br/>Impacto: médio.<br/><br/>Aguardo retorno,<br/><br/>João Pereira<br/>joao.pereira@example.com<br/>Tel: (11) 93472-2158</p><p>--<br/>Att,<br/>João Pereira</p></body></html>
+
+--8c038312606a4d9db4c3b786f9edfd23--
+
+
+From carlos.ramos@example.com Sun, 16 Nov 2025 00:50:00 -0000
+Message-ID: <e495b1a3-7c3e-48e0-97b1-58b9c9dff7f1@example.com>
+Date: Sun, 16 Nov 2025 00:50:00 -0000
+From: Carlos Ramos <carlos.ramos@example.com>
+To: Suporte <suporte@example.com>
+Subject: Falha ao exportar relatório
+Received: from mail2.example.com (mail2.example.com [192.0.2.144]) by mx.example.com with ESMTP id bc393218; Sun, 16 Nov 2025 00:50:00 -0000
+Reply-To: carlos.ramos@example.com
+User-Agent: Roundcube Webmail
+X-Priority: High
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="44b08051c4df4c40a3bc7f7fa2ac6a1e"
+
+--44b08051c4df4c40a3bc7f7fa2ac6a1e
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: falha ao exportar relatório. Detalhes: test case #3 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 364' ou 'Timeout após 18s'.
+
+Impacto: alto.
+
+Aguardo retorno,
+
+Carlos Ramos
+carlos.ramos@example.com
+Tel: (11) 99515-6770
+
+--44b08051c4df4c40a3bc7f7fa2ac6a1e
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: falha ao exportar relatório. Detalhes: test case #3 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 364’ ou ’Timeout após 18s’.<br/><br/>Impacto: alto.<br/><br/>Aguardo retorno,<br/><br/>Carlos Ramos<br/>carlos.ramos@example.com<br/>Tel: (11) 99515-6770</p><p>--<br/>Att,<br/>Carlos Ramos</p></body></html>
+
+--44b08051c4df4c40a3bc7f7fa2ac6a1e--
+
+
+From ana.costa@example.com Sat, 15 Nov 2025 21:17:00 -0000
+Message-ID: <005d0ae5-8bd8-4448-8488-32e9fefca1b7@example.com>
+Date: Sat, 15 Nov 2025 21:17:00 -0000
+From: Ana Costa <ana.costa@example.com>
+To: Suporte <suporte@example.com>
+Subject: Necessito reativar meu plano
+Received: from mail1.example.com (mail4.example.com [192.0.2.3]) by mx.example.com with ESMTP id c3361d56; Sat, 15 Nov 2025 21:17:00 -0000
+Reply-To: ana.costa@example.com
+User-Agent: Thunderbird
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="8436d852492e403698af983d2a2be076"
+
+--8436d852492e403698af983d2a2be076
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: necessito reativar meu plano. Detalhes: test case #4 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 284' ou 'Timeout após 25s'.
+
+Impacto: alto.
+
+Aguardo retorno,
+
+Ana Costa
+ana.costa@example.com
+Tel: (11) 92034-8149
+
+--8436d852492e403698af983d2a2be076
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: necessito reativar meu plano. Detalhes: test case #4 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 284’ ou ’Timeout após 25s’.<br/><br/>Impacto: alto.<br/><br/>Aguardo retorno,<br/><br/>Ana Costa<br/>ana.costa@example.com<br/>Tel: (11) 92034-8149</p><p>--<br/>Att,<br/>Ana Costa</p></body></html>
+
+--8436d852492e403698af983d2a2be076--
+
+
+From lucas.almeida@example.com Sun, 16 Nov 2025 03:43:00 -0000
+Message-ID: <9f27284e-2ea3-4065-971c-5c368a8a68af@example.com>
+Date: Sun, 16 Nov 2025 03:43:00 -0000
+From: Lucas Almeida <lucas.almeida@example.com>
+To: Suporte <suporte@example.com>
+Subject: Aplicativo travando no Android
+Received: from mail5.example.com (mail5.example.com [192.0.2.231]) by mx.example.com with ESMTP id fb08d68e; Sun, 16 Nov 2025 03:43:00 -0000
+Reply-To: lucas.almeida@example.com
+User-Agent: Thunderbird
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="dbecbdf4151349039f2fb69bf7011ab4"
+
+--dbecbdf4151349039f2fb69bf7011ab4
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: aplicativo travando no android. Detalhes: test case #5 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 119' ou 'Timeout após 6s'.
+
+Impacto: médio.
+
+Aguardo retorno,
+
+Lucas Almeida
+lucas.almeida@example.com
+Tel: (11) 91114-4433
+
+--dbecbdf4151349039f2fb69bf7011ab4
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: aplicativo travando no android. Detalhes: test case #5 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 119’ ou ’Timeout após 6s’.<br/><br/>Impacto: médio.<br/><br/>Aguardo retorno,<br/><br/>Lucas Almeida<br/>lucas.almeida@example.com<br/>Tel: (11) 91114-4433</p><p>--<br/>Att,<br/>Lucas Almeida</p></body></html>
+
+--dbecbdf4151349039f2fb69bf7011ab4--
+
+
+From beatriz.souza@example.com Sun, 16 Nov 2025 07:12:00 -0000
+Message-ID: <8d2b8060-0ddb-4c2b-aff4-ea5c62afe4b1@example.com>
+Date: Sun, 16 Nov 2025 07:12:00 -0000
+From: Beatriz Souza <beatriz.souza@example.com>
+To: Suporte <suporte@example.com>
+Subject: Alteração de senha não funciona
+Received: from mail5.example.com (mail1.example.com [192.0.2.248]) by mx.example.com with ESMTP id ce80b1a1; Sun, 16 Nov 2025 07:12:00 -0000
+Reply-To: beatriz.souza@example.com
+User-Agent: Apple Mail (2.3445.9.1)
+X-Priority: High
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="19ff24ca9d4341d2bc17cc8ada11c90e"
+
+--19ff24ca9d4341d2bc17cc8ada11c90e
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: alteração de senha não funciona. Detalhes: test case #6 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 203' ou 'Timeout após 2s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Beatriz Souza
+beatriz.souza@example.com
+Tel: (11) 98189-7188
+
+--19ff24ca9d4341d2bc17cc8ada11c90e
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: alteração de senha não funciona. Detalhes: test case #6 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 203’ ou ’Timeout após 2s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Beatriz Souza<br/>beatriz.souza@example.com<br/>Tel: (11) 98189-7188</p><p>--<br/>Att,<br/>Beatriz Souza</p></body></html>
+
+--19ff24ca9d4341d2bc17cc8ada11c90e--
+
+
+From felipe.rocha@example.com Sat, 15 Nov 2025 10:59:00 -0000
+Message-ID: <f6269e98-2a04-480b-8a4a-ffdd9df72b28@example.com>
+Date: Sat, 15 Nov 2025 10:59:00 -0000
+From: Felipe Rocha <felipe.rocha@example.com>
+To: Suporte <suporte@example.com>
+Subject: Cobrança em duplicidade
+Received: from mail3.example.com (mail5.example.com [192.0.2.9]) by mx.example.com with ESMTP id ce21c44f; Sat, 15 Nov 2025 10:59:00 -0000
+Reply-To: felipe.rocha@example.com
+User-Agent: Roundcube Webmail
+X-Priority: High
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="a0fd3011968b4f89a16cd8fdc44aa59d"
+
+--a0fd3011968b4f89a16cd8fdc44aa59d
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: cobrança em duplicidade. Detalhes: test case #7 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 301' ou 'Timeout após 29s'.
+
+Impacto: alto.
+
+Aguardo retorno,
+
+Felipe Rocha
+felipe.rocha@example.com
+Tel: (11) 91269-8472
+
+--a0fd3011968b4f89a16cd8fdc44aa59d
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: cobrança em duplicidade. Detalhes: test case #7 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 301’ ou ’Timeout após 29s’.<br/><br/>Impacto: alto.<br/><br/>Aguardo retorno,<br/><br/>Felipe Rocha<br/>felipe.rocha@example.com<br/>Tel: (11) 91269-8472</p><p>--<br/>Att,<br/>Felipe Rocha</p></body></html>
+
+--a0fd3011968b4f89a16cd8fdc44aa59d--
+
+
+From patricia.gomes@example.com Sat, 15 Nov 2025 11:20:00 -0000
+Message-ID: <faf98d24-29da-47a5-932c-064335f08fd8@example.com>
+Date: Sat, 15 Nov 2025 11:20:00 -0000
+From: Patrícia Gomes <patricia.gomes@example.com>
+To: Suporte <suporte@example.com>
+Subject: Notificações não chegam
+Received: from mail4.example.com (mail1.example.com [192.0.2.237]) by mx.example.com with ESMTP id 41b9e292; Sat, 15 Nov 2025 11:20:00 -0000
+Reply-To: patricia.gomes@example.com
+User-Agent: Apple Mail (2.3445.9.1)
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="71dcf1c9ed274761a11cefce98b8fc3f"
+
+--71dcf1c9ed274761a11cefce98b8fc3f
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: notificações não chegam. Detalhes: test case #8 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 399' ou 'Timeout após 5s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Patrícia Gomes
+patricia.gomes@example.com
+Tel: (11) 95189-1606
+
+--71dcf1c9ed274761a11cefce98b8fc3f
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: notificações não chegam. Detalhes: test case #8 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 399’ ou ’Timeout após 5s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Patrícia Gomes<br/>patricia.gomes@example.com<br/>Tel: (11) 95189-1606</p><p>--<br/>Att,<br/>Patrícia Gomes</p></body></html>
+
+--71dcf1c9ed274761a11cefce98b8fc3f--
+
+
+From rafael.lima@example.com Sat, 15 Nov 2025 19:50:00 -0000
+Message-ID: <c7cf1f5a-16c9-4644-8a57-a661c76b652c@example.com>
+Date: Sat, 15 Nov 2025 19:50:00 -0000
+From: Rafael Lima <rafael.lima@example.com>
+To: Suporte <suporte@example.com>
+Subject: Sincronização entre dispositivos falha
+Received: from mail4.example.com (mail1.example.com [192.0.2.124]) by mx.example.com with ESMTP id d78134bb; Sat, 15 Nov 2025 19:50:00 -0000
+Reply-To: rafael.lima@example.com
+User-Agent: Thunderbird
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="bbbe51599cba4c9d97f7c0da4026e6f7"
+
+--bbbe51599cba4c9d97f7c0da4026e6f7
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: sincronização entre dispositivos falha. Detalhes: test case #9 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 594' ou 'Timeout após 2s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Rafael Lima
+rafael.lima@example.com
+Tel: (11) 96654-4150
+
+--bbbe51599cba4c9d97f7c0da4026e6f7
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: sincronização entre dispositivos falha. Detalhes: test case #9 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 594’ ou ’Timeout após 2s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Rafael Lima<br/>rafael.lima@example.com<br/>Tel: (11) 96654-4150</p><p>--<br/>Att,<br/>Rafael Lima</p></body></html>
+
+--bbbe51599cba4c9d97f7c0da4026e6f7--
+
+
+From sofia.martins@example.com Sat, 15 Nov 2025 22:50:00 -0000
+Message-ID: <ec477b0e-86ed-4656-9c25-fbdbb486f0d1@example.com>
+Date: Sat, 15 Nov 2025 22:50:00 -0000
+From: Sofia Martins <sofia.martins@example.com>
+To: Suporte <suporte@example.com>
+Subject: Erro desconhecido ao fazer login
+Received: from mail3.example.com (mail3.example.com [192.0.2.170]) by mx.example.com with ESMTP id 0a02919e; Sat, 15 Nov 2025 22:50:00 -0000
+Reply-To: sofia.martins@example.com
+User-Agent: Thunderbird
+X-Priority: High
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="474aa031578045f0b07c0a36c788265d"
+
+--474aa031578045f0b07c0a36c788265d
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: erro desconhecido ao fazer login. Detalhes: test case #10 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 400' ou 'Timeout após 26s'.
+
+Impacto: médio.
+
+Aguardo retorno,
+
+Sofia Martins
+sofia.martins@example.com
+Tel: (11) 92379-2948
+
+--474aa031578045f0b07c0a36c788265d
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: erro desconhecido ao fazer login. Detalhes: test case #10 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 400’ ou ’Timeout após 26s’.<br/><br/>Impacto: médio.<br/><br/>Aguardo retorno,<br/><br/>Sofia Martins<br/>sofia.martins@example.com<br/>Tel: (11) 92379-2948</p><p>--<br/>Att,<br/>Sofia Martins</p></body></html>
+
+--474aa031578045f0b07c0a36c788265d--
+
+
+From eduardo.nunes@example.com Sat, 15 Nov 2025 16:01:00 -0000
+Message-ID: <fee505fd-c18e-4fed-a676-84ae6cb450a7@example.com>
+Date: Sat, 15 Nov 2025 16:01:00 -0000
+From: Eduardo Nunes <eduardo.nunes@example.com>
+To: Suporte <suporte@example.com>
+Subject: Página de pagamentos retorna 502
+Received: from mail4.example.com (mail4.example.com [192.0.2.163]) by mx.example.com with ESMTP id f7d871b7; Sat, 15 Nov 2025 16:01:00 -0000
+Reply-To: eduardo.nunes@example.com
+User-Agent: Thunderbird
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="8a48ca5fa3c845aa903b6ec20f16309e"
+
+--8a48ca5fa3c845aa903b6ec20f16309e
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: página de pagamentos retorna 502. Detalhes: test case #11 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 363' ou 'Timeout após 14s'.
+
+Impacto: médio.
+
+Aguardo retorno,
+
+Eduardo Nunes
+eduardo.nunes@example.com
+Tel: (11) 97733-1568
+
+--8a48ca5fa3c845aa903b6ec20f16309e
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: página de pagamentos retorna 502. Detalhes: test case #11 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 363’ ou ’Timeout após 14s’.<br/><br/>Impacto: médio.<br/><br/>Aguardo retorno,<br/><br/>Eduardo Nunes<br/>eduardo.nunes@example.com<br/>Tel: (11) 97733-1568</p><p>--<br/>Att,<br/>Eduardo Nunes</p></body></html>
+
+--8a48ca5fa3c845aa903b6ec20f16309e--
+
+
+From laura.araujo@example.com Sun, 16 Nov 2025 09:12:00 -0000
+Message-ID: <b8a5decc-64a3-4b38-89ec-98dea7df47d2@example.com>
+Date: Sun, 16 Nov 2025 09:12:00 -0000
+From: Laura Araújo <laura.araujo@example.com>
+To: Suporte <suporte@example.com>
+Subject: Relatório com dados inconsistentes
+Received: from mail3.example.com (mail5.example.com [192.0.2.47]) by mx.example.com with ESMTP id 37bdcd21; Sun, 16 Nov 2025 09:12:00 -0000
+Reply-To: laura.araujo@example.com
+User-Agent: Outlook 16.0
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="231bfc03a8b24be5889d60a089bc7b61"
+
+--231bfc03a8b24be5889d60a089bc7b61
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: relatório com dados inconsistentes. Detalhes: test case #12 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 485' ou 'Timeout após 16s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Laura Araújo
+laura.araujo@example.com
+Tel: (11) 92282-4911
+
+--231bfc03a8b24be5889d60a089bc7b61
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: relatório com dados inconsistentes. Detalhes: test case #12 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 485’ ou ’Timeout após 16s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Laura Araújo<br/>laura.araujo@example.com<br/>Tel: (11) 92282-4911</p><p>--<br/>Att,<br/>Laura Araújo</p></body></html>
+
+--231bfc03a8b24be5889d60a089bc7b61--
+
+
+From pedro.oliveira@example.com Sun, 16 Nov 2025 06:53:00 -0000
+Message-ID: <e523bea7-03cc-4353-a1b7-250b3114a42e@example.com>
+Date: Sun, 16 Nov 2025 06:53:00 -0000
+From: Pedro Oliveira <pedro.oliveira@example.com>
+To: Suporte <suporte@example.com>
+Subject: App lento após atualização
+Received: from mail1.example.com (mail2.example.com [192.0.2.192]) by mx.example.com with ESMTP id d06a430b; Sun, 16 Nov 2025 06:53:00 -0000
+Reply-To: pedro.oliveira@example.com
+User-Agent: Roundcube Webmail
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="4678388bbdc34f7da847f1de745434f4"
+
+--4678388bbdc34f7da847f1de745434f4
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: app lento após atualização. Detalhes: test case #13 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 378' ou 'Timeout após 12s'.
+
+Impacto: médio.
+
+Aguardo retorno,
+
+Pedro Oliveira
+pedro.oliveira@example.com
+Tel: (11) 98556-2874
+
+--4678388bbdc34f7da847f1de745434f4
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: app lento após atualização. Detalhes: test case #13 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 378’ ou ’Timeout após 12s’.<br/><br/>Impacto: médio.<br/><br/>Aguardo retorno,<br/><br/>Pedro Oliveira<br/>pedro.oliveira@example.com<br/>Tel: (11) 98556-2874</p><p>--<br/>Att,<br/>Pedro Oliveira</p></body></html>
+
+--4678388bbdc34f7da847f1de745434f4--
+
+
+From bruno.vieira@example.com Sat, 15 Nov 2025 12:31:00 -0000
+Message-ID: <c38cc692-6bee-49c8-9fdc-36115918c190@example.com>
+Date: Sat, 15 Nov 2025 12:31:00 -0000
+From: Bruno Vieira <bruno.vieira@example.com>
+To: Suporte <suporte@example.com>
+Subject: Timeout na integração com ERP
+Received: from mail2.example.com (mail4.example.com [192.0.2.36]) by mx.example.com with ESMTP id 6c503cb4; Sat, 15 Nov 2025 12:31:00 -0000
+Reply-To: bruno.vieira@example.com
+User-Agent: Roundcube Webmail
+X-Priority: High
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="c9fd0cac05c844939b012799814e2d58"
+
+--c9fd0cac05c844939b012799814e2d58
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: timeout na integração com erp. Detalhes: test case #14 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 363' ou 'Timeout após 23s'.
+
+Impacto: alto.
+
+Aguardo retorno,
+
+Bruno Vieira
+bruno.vieira@example.com
+Tel: (11) 92592-3382
+
+--c9fd0cac05c844939b012799814e2d58
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: timeout na integração com erp. Detalhes: test case #14 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 363’ ou ’Timeout após 23s’.<br/><br/>Impacto: alto.<br/><br/>Aguardo retorno,<br/><br/>Bruno Vieira<br/>bruno.vieira@example.com<br/>Tel: (11) 92592-3382</p><p>--<br/>Att,<br/>Bruno Vieira</p></body></html>
+
+--c9fd0cac05c844939b012799814e2d58--
+
+
+From camila.ferreira@example.com Sun, 16 Nov 2025 05:59:00 -0000
+Message-ID: <7448854c-5c3f-481d-8f21-3830de111fb7@example.com>
+Date: Sun, 16 Nov 2025 05:59:00 -0000
+From: Camila Ferreira <camila.ferreira@example.com>
+To: Suporte <suporte@example.com>
+Subject: Anexo não abre no preview
+Received: from mail4.example.com (mail5.example.com [192.0.2.3]) by mx.example.com with ESMTP id 485281da; Sun, 16 Nov 2025 05:59:00 -0000
+Reply-To: camila.ferreira@example.com
+User-Agent: Outlook 16.0
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="89ea8b1c796e4253a4ba1e3113607c94"
+
+--89ea8b1c796e4253a4ba1e3113607c94
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: anexo não abre no preview. Detalhes: test case #15 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 234' ou 'Timeout após 16s'.
+
+Impacto: alto.
+
+Aguardo retorno,
+
+Camila Ferreira
+camila.ferreira@example.com
+Tel: (11) 95776-5961
+
+--89ea8b1c796e4253a4ba1e3113607c94
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: anexo não abre no preview. Detalhes: test case #15 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 234’ ou ’Timeout após 16s’.<br/><br/>Impacto: alto.<br/><br/>Aguardo retorno,<br/><br/>Camila Ferreira<br/>camila.ferreira@example.com<br/>Tel: (11) 95776-5961</p><p>--<br/>Att,<br/>Camila Ferreira</p></body></html>
+
+--89ea8b1c796e4253a4ba1e3113607c94--
+
+
+From thiago.barros@example.com Sun, 16 Nov 2025 05:14:00 -0000
+Message-ID: <703d49ca-e1e1-4070-86ca-b2b1ea1db378@example.com>
+Date: Sun, 16 Nov 2025 05:14:00 -0000
+From: Thiago Barros <thiago.barros@example.com>
+To: Suporte <suporte@example.com>
+Subject: Erro no envio de convites
+Received: from mail5.example.com (mail4.example.com [192.0.2.218]) by mx.example.com with ESMTP id acc0e2f1; Sun, 16 Nov 2025 05:14:00 -0000
+Reply-To: thiago.barros@example.com
+User-Agent: Roundcube Webmail
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="044d567a70da42bcb41c43c8891a1809"
+
+--044d567a70da42bcb41c43c8891a1809
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: erro no envio de convites. Detalhes: test case #16 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 340' ou 'Timeout após 25s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Thiago Barros
+thiago.barros@example.com
+Tel: (11) 92425-2112
+
+--044d567a70da42bcb41c43c8891a1809
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: erro no envio de convites. Detalhes: test case #16 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 340’ ou ’Timeout após 25s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Thiago Barros<br/>thiago.barros@example.com<br/>Tel: (11) 92425-2112</p><p>--<br/>Att,<br/>Thiago Barros</p></body></html>
+
+--044d567a70da42bcb41c43c8891a1809--
+
+
+From renata.pires@example.com Sun, 16 Nov 2025 04:10:00 -0000
+Message-ID: <fe1cda67-5287-4c27-8290-8bacce9ce7ce@example.com>
+Date: Sun, 16 Nov 2025 04:10:00 -0000
+From: Renata Pires <renata.pires@example.com>
+To: Suporte <suporte@example.com>
+Subject: Reset das configurações sem aviso
+Received: from mail4.example.com (mail1.example.com [192.0.2.197]) by mx.example.com with ESMTP id 279e402c; Sun, 16 Nov 2025 04:10:00 -0000
+Reply-To: renata.pires@example.com
+User-Agent: Apple Mail (2.3445.9.1)
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="03cebadb2c8d413fb604e60f18d1fec1"
+
+--03cebadb2c8d413fb604e60f18d1fec1
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: reset das configurações sem aviso. Detalhes: test case #17 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 113' ou 'Timeout após 8s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Renata Pires
+renata.pires@example.com
+Tel: (11) 92528-5122
+
+--03cebadb2c8d413fb604e60f18d1fec1
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: reset das configurações sem aviso. Detalhes: test case #17 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 113’ ou ’Timeout após 8s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Renata Pires<br/>renata.pires@example.com<br/>Tel: (11) 92528-5122</p><p>--<br/>Att,<br/>Renata Pires</p></body></html>
+
+--03cebadb2c8d413fb604e60f18d1fec1--
+
+
+From gustavo.pinto@example.com Sun, 16 Nov 2025 03:15:00 -0000
+Message-ID: <b910662c-a231-4d25-8ef6-8e5482975dc3@example.com>
+Date: Sun, 16 Nov 2025 03:15:00 -0000
+From: Gustavo Pinto <gustavo.pinto@example.com>
+To: Suporte <suporte@example.com>
+Subject: Plano não ativado após pagamento
+Received: from mail3.example.com (mail4.example.com [192.0.2.19]) by mx.example.com with ESMTP id 5e6a8aa8; Sun, 16 Nov 2025 03:15:00 -0000
+Reply-To: gustavo.pinto@example.com
+User-Agent: Roundcube Webmail
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="7fe7c495c8214a738003ad9bfcfa81a2"
+
+--7fe7c495c8214a738003ad9bfcfa81a2
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: plano não ativado após pagamento. Detalhes: test case #18 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 176' ou 'Timeout após 2s'.
+
+Impacto: alto.
+
+Aguardo retorno,
+
+Gustavo Pinto
+gustavo.pinto@example.com
+Tel: (11) 98825-4057
+
+--7fe7c495c8214a738003ad9bfcfa81a2
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: plano não ativado após pagamento. Detalhes: test case #18 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 176’ ou ’Timeout após 2s’.<br/><br/>Impacto: alto.<br/><br/>Aguardo retorno,<br/><br/>Gustavo Pinto<br/>gustavo.pinto@example.com<br/>Tel: (11) 98825-4057</p><p>--<br/>Att,<br/>Gustavo Pinto</p></body></html>
+
+--7fe7c495c8214a738003ad9bfcfa81a2--
+
+
+From isabela.mota@example.com Sat, 15 Nov 2025 13:29:00 -0000
+Message-ID: <019bf39c-a1dc-46d6-8f41-b2989c1e0dea@example.com>
+Date: Sat, 15 Nov 2025 13:29:00 -0000
+From: Isabela Mota <isabela.mota@example.com>
+To: Suporte <suporte@example.com>
+Subject: Cobrança inesperada no cartão
+Received: from mail2.example.com (mail3.example.com [192.0.2.250]) by mx.example.com with ESMTP id 8d95d3af; Sat, 15 Nov 2025 13:29:00 -0000
+Reply-To: isabela.mota@example.com
+User-Agent: Thunderbird
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="15408b48450c428ead763a243c1b2bfb"
+
+--15408b48450c428ead763a243c1b2bfb
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: cobrança inesperada no cartão. Detalhes: test case #19 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 218' ou 'Timeout após 8s'.
+
+Impacto: baixo.
+
+Aguardo retorno,
+
+Isabela Mota
+isabela.mota@example.com
+Tel: (11) 97745-1509
+
+--15408b48450c428ead763a243c1b2bfb
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: cobrança inesperada no cartão. Detalhes: test case #19 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 218’ ou ’Timeout após 8s’.<br/><br/>Impacto: baixo.<br/><br/>Aguardo retorno,<br/><br/>Isabela Mota<br/>isabela.mota@example.com<br/>Tel: (11) 97745-1509</p><p>--<br/>Att,<br/>Isabela Mota</p></body></html>
+
+--15408b48450c428ead763a243c1b2bfb--
+
+
+From diego.fernandes@example.com Sun, 16 Nov 2025 09:57:00 -0000
+Message-ID: <d169217f-5404-4d21-a5e0-af470635314a@example.com>
+Date: Sun, 16 Nov 2025 09:57:00 -0000
+From: Diego Fernandes <diego.fernandes@example.com>
+To: Suporte <suporte@example.com>
+Subject: Exportação CSV com colunas faltando
+Received: from mail5.example.com (mail1.example.com [192.0.2.215]) by mx.example.com with ESMTP id bae95374; Sun, 16 Nov 2025 09:57:00 -0000
+Reply-To: diego.fernandes@example.com
+User-Agent: Apple Mail (2.3445.9.1)
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="f526e666e73e4dc3894b58fc733e647a"
+
+--f526e666e73e4dc3894b58fc733e647a
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: exportação csv com colunas faltando. Detalhes: test case #20 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 217' ou 'Timeout após 19s'.
+
+Impacto: baixo.
+
+Aguardo retorno,
+
+Diego Fernandes
+diego.fernandes@example.com
+Tel: (11) 92850-7159
+
+--f526e666e73e4dc3894b58fc733e647a
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: exportação csv com colunas faltando. Detalhes: test case #20 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 217’ ou ’Timeout após 19s’.<br/><br/>Impacto: baixo.<br/><br/>Aguardo retorno,<br/><br/>Diego Fernandes<br/>diego.fernandes@example.com<br/>Tel: (11) 92850-7159</p><p>--<br/>Att,<br/>Diego Fernandes</p></body></html>
+
+--f526e666e73e4dc3894b58fc733e647a--
+
+
+From marcos.cardoso@example.com Sat, 15 Nov 2025 17:09:00 -0000
+Message-ID: <57e653a4-5563-4b2c-ad67-611e94f07496@example.com>
+Date: Sat, 15 Nov 2025 17:09:00 -0000
+From: Marcos Cardoso <marcos.cardoso@example.com>
+To: Suporte <suporte@example.com>
+Subject: Atualização automática quebrou tema
+Received: from mail1.example.com (mail4.example.com [192.0.2.91]) by mx.example.com with ESMTP id 78d2670d; Sat, 15 Nov 2025 17:09:00 -0000
+Reply-To: marcos.cardoso@example.com
+User-Agent: Apple Mail (2.3445.9.1)
+X-Priority: High
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="6a2db3e3dcc64668882a2b65c4c27bc9"
+
+--6a2db3e3dcc64668882a2b65c4c27bc9
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: atualização automática quebrou tema. Detalhes: test case #21 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 161' ou 'Timeout após 17s'.
+
+Impacto: alto.
+
+Aguardo retorno,
+
+Marcos Cardoso
+marcos.cardoso@example.com
+Tel: (11) 95162-6149
+
+--6a2db3e3dcc64668882a2b65c4c27bc9
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: atualização automática quebrou tema. Detalhes: test case #21 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 161’ ou ’Timeout após 17s’.<br/><br/>Impacto: alto.<br/><br/>Aguardo retorno,<br/><br/>Marcos Cardoso<br/>marcos.cardoso@example.com<br/>Tel: (11) 95162-6149</p><p>--<br/>Att,<br/>Marcos Cardoso</p></body></html>
+
+--6a2db3e3dcc64668882a2b65c4c27bc9--
+
+
+From vanessa.rocha@example.com Sun, 16 Nov 2025 06:20:00 -0000
+Message-ID: <a303c4f3-dcc8-4a9c-9670-fc99fe39a54b@example.com>
+Date: Sun, 16 Nov 2025 06:20:00 -0000
+From: Vanessa Rocha <vanessa.rocha@example.com>
+To: Suporte <suporte@example.com>
+Subject: Falha no OCR ao processar documento
+Received: from mail1.example.com (mail2.example.com [192.0.2.235]) by mx.example.com with ESMTP id da876d33; Sun, 16 Nov 2025 06:20:00 -0000
+Reply-To: vanessa.rocha@example.com
+User-Agent: Roundcube Webmail
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="2786cfe9c2994a2cbd26bdb3bb50f511"
+
+--2786cfe9c2994a2cbd26bdb3bb50f511
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: falha no ocr ao processar documento. Detalhes: test case #22 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 401' ou 'Timeout após 21s'.
+
+Impacto: bloqueante.
+
+Aguardo retorno,
+
+Vanessa Rocha
+vanessa.rocha@example.com
+Tel: (11) 93057-5548
+
+--2786cfe9c2994a2cbd26bdb3bb50f511
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: falha no ocr ao processar documento. Detalhes: test case #22 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 401’ ou ’Timeout após 21s’.<br/><br/>Impacto: bloqueante.<br/><br/>Aguardo retorno,<br/><br/>Vanessa Rocha<br/>vanessa.rocha@example.com<br/>Tel: (11) 93057-5548</p><p>--<br/>Att,<br/>Vanessa Rocha</p></body></html>
+
+--2786cfe9c2994a2cbd26bdb3bb50f511--
+
+
+From murilo.castro@example.com Sun, 16 Nov 2025 03:37:00 -0000
+Message-ID: <8f3b47ec-5e45-406e-8d50-4c7db575a41a@example.com>
+Date: Sun, 16 Nov 2025 03:37:00 -0000
+From: Murilo Castro <murilo.castro@example.com>
+To: Suporte <suporte@example.com>
+Subject: Integração com Google Calendar não funciona
+Received: from mail1.example.com (mail4.example.com [192.0.2.224]) by mx.example.com with ESMTP id dbc07811; Sun, 16 Nov 2025 03:37:00 -0000
+Reply-To: murilo.castro@example.com
+User-Agent: Thunderbird
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="699487a6f3e5493286c00119cc909035"
+
+--699487a6f3e5493286c00119cc909035
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: integração com google calendar não funciona. Detalhes: test case #23 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 343' ou 'Timeout após 11s'.
+
+Impacto: médio.
+
+Aguardo retorno,
+
+Murilo Castro
+murilo.castro@example.com
+Tel: (11) 98041-6063
+
+--699487a6f3e5493286c00119cc909035
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: integração com google calendar não funciona. Detalhes: test case #23 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 343’ ou ’Timeout após 11s’.<br/><br/>Impacto: médio.<br/><br/>Aguardo retorno,<br/><br/>Murilo Castro<br/>murilo.castro@example.com<br/>Tel: (11) 98041-6063</p><p>--<br/>Att,<br/>Murilo Castro</p></body></html>
+
+--699487a6f3e5493286c00119cc909035--
+
+
+From priscila.teixeira@example.com Sun, 16 Nov 2025 00:48:00 -0000
+Message-ID: <0fece560-1c18-4952-b457-a5457e77ed59@example.com>
+Date: Sun, 16 Nov 2025 00:48:00 -0000
+From: Priscila Teixeira <priscila.teixeira@example.com>
+To: Suporte <suporte@example.com>
+Subject: Tela em branco ao abrir projeto
+Received: from mail4.example.com (mail5.example.com [192.0.2.189]) by mx.example.com with ESMTP id 861e390f; Sun, 16 Nov 2025 00:48:00 -0000
+Reply-To: priscila.teixeira@example.com
+User-Agent: Apple Mail (2.3445.9.1)
+X-Priority: Normal
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="43f6720bb8004ed29edfab4709d4c08a"
+
+--43f6720bb8004ed29edfab4709d4c08a
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: tela em branco ao abrir projeto. Detalhes: test case #24 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 171' ou 'Timeout após 29s'.
+
+Impacto: médio.
+
+Aguardo retorno,
+
+Priscila Teixeira
+priscila.teixeira@example.com
+Tel: (11) 91018-6364
+
+--43f6720bb8004ed29edfab4709d4c08a
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: tela em branco ao abrir projeto. Detalhes: test case #24 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 171’ ou ’Timeout após 29s’.<br/><br/>Impacto: médio.<br/><br/>Aguardo retorno,<br/><br/>Priscila Teixeira<br/>priscila.teixeira@example.com<br/>Tel: (11) 91018-6364</p><p>--<br/>Att,<br/>Priscila Teixeira</p></body></html>
+
+--43f6720bb8004ed29edfab4709d4c08a--
+
+
+From andre.souza@example.com Sat, 15 Nov 2025 22:13:00 -0000
+Message-ID: <fa7298b7-47fe-46d8-9d53-4cd725fe77db@example.com>
+Date: Sat, 15 Nov 2025 22:13:00 -0000
+From: André Souza <andre.souza@example.com>
+To: Suporte <suporte@example.com>
+Subject: Permissão de equipe não aplicada
+Received: from mail3.example.com (mail3.example.com [192.0.2.25]) by mx.example.com with ESMTP id 1805c342; Sat, 15 Nov 2025 22:13:00 -0000
+Reply-To: andre.souza@example.com
+User-Agent: Outlook 16.0
+X-Priority: Low
+MIME-Version: 1.0
+
+Content-Type: multipart/alternative; boundary="51baaa8d710e4b2e98dbd6ebbcf9864e"
+
+--51baaa8d710e4b2e98dbd6ebbcf9864e
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+Olá equipe de suporte,
+
+Estou enfrentando o seguinte problema: permissão de equipe não aplicada. Detalhes: test case #25 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.
+
+Passos para reproduzir:
+1. Abra o app
+2. Vá para a seção X
+3. Clique em Y
+
+Logs / mensagens relevantes: 'Erro 505' ou 'Timeout após 23s'.
+
+Impacto: baixo.
+
+Aguardo retorno,
+
+André Souza
+andre.souza@example.com
+Tel: (11) 95184-3082
+
+--51baaa8d710e4b2e98dbd6ebbcf9864e
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+<html><body><p>Olá equipe de suporte,<br/><br/>Estou enfrentando o seguinte problema: permissão de equipe não aplicada. Detalhes: test case #25 — quando tento reproduzir o fluxo, o sistema retorna comportamento inesperado.<br/><br/>Passos para reproduzir:<br/>1. Abra o app<br/>2. Vá para a seção X<br/>3. Clique em Y<br/><br/>Logs / mensagens relevantes: ’Erro 505’ ou ’Timeout após 23s’.<br/><br/>Impacto: baixo.<br/><br/>Aguardo retorno,<br/><br/>André Souza<br/>andre.souza@example.com<br/>Tel: (11) 95184-3082</p><p>--<br/>Att,<br/>André Souza</p></body></html>
+
+--51baaa8d710e4b2e98dbd6ebbcf9864e--
+
