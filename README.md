@@ -156,10 +156,22 @@ git clone https://github.com/danilooliveira-lab/inboxlogic
 cd inboxlogic
 ```
 
+### 2. Selecionar o diretorio escolhido
+
+```bash
+cd C:\Users\seuusuario\Desktop\inboxlogic-main
+(diretorio utilizado apenas como exemplo, procure o diretorio do arquivo na sua maquina)
+```
+
 ### 2. Criar ambiente virtual
 
 ```bash
 python -m venv venv
+```
+
+### 2. Ativar o ambiente
+
+```bash
 source venv/bin/activate - Para sistemas Linux/macOS
 venv\Scripts\activate    - Para sistemas Windows
 ```
@@ -172,7 +184,9 @@ pip install -r requirements.txt
 
 ### 4. Configurar chave OpenAI
 
-Criar o arquivo `.env`:
+Por motivos de segurança, voce deve utilizar sua propria chave openai.
+
+Criar o arquivo `.env` na raiz da aplicação:
 
 ```
 OPENAI_API_KEY="sua-chave-aqui"
