@@ -153,14 +153,14 @@ AUTOU_CASE_TECNICO/
 
 ```bash
 git clone https://github.com/danilooliveira-lab/inboxlogic
-cd inboxlogic
+Ou faça download via .zip
 ```
 
 ### 2. Selecionar o diretorio escolhido
 
 ```bash
 cd C:\Users\seuusuario\Desktop\inboxlogic-main
-(diretorio utilizado apenas como exemplo, procure o diretorio do arquivo na sua maquina)
+(diretorio utilizado apenas como exemplo, procure o diretorio de arquivo na sua maquina)
 ```
 
 ### 2. Criar ambiente virtual
