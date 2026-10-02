@@ -2,7 +2,7 @@
 
 **Classificação, resposta automática e análise de grandes volumes de e-mails.**
 
-> Projeto desenvolvido como solução para o *Case técnico da AutoU*. A aplicação utiliza IA para classificar e-mails, gerar respostas automáticas e extrair insights estruturados a partir de arquivos .txt, .pdf e .mbox.
+> Projeto desenvolvido como solução para um *Case técnico *. A aplicação utiliza IA para classificar e-mails, gerar respostas automáticas e extrair insights estruturados a partir de arquivos .txt, .pdf e .mbox.
 
 ---
 
